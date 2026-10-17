@@ -4,7 +4,7 @@
   --surface: #ffffff;
   --text: #16222e;
   --dim: #5b6b7c;
-  --accent: #1769aa;
+  --accent: #0f7a5a;   /* Part D: เปลี่ยนสีปุ่มเป็นเขียวเข้ม เพื่อดูว่า deploy ใหม่จริง */
   --accent-ink: #ffffff;
   --shadow: 0 12px 32px #1e3a5f20;
 }
