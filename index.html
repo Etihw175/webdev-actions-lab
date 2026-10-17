@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My GitHub Pages Lab — อภิภู ก้านสุวรรณ</title>
+  <meta name="description" content="แลป GitHub Actions + GitHub Pages — เว็บไซต์ static ที่ deploy อัตโนมัติทุกครั้งที่ push">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">WEB DEV LAB</span>
+    <button id="themeBtn" type="button" aria-pressed="false">โหมดกลางคืน</button>
+  </header>
+
+  <main>
+    <!-- Exercise 1: ชื่อ-รหัสนิสิต และข้อความต้อนรับของตัวเอง -->
+    <section class="card hero">
+      <h1>My Web Development Lab</h1>
+      <p class="who">ชื่อ: อภิภู ก้านสุวรรณ | รหัสนิสิต: 67160175</p>
+      <p class="lede">หน้านี้ deploy อัตโนมัติด้วย GitHub Actions ทุกครั้งที่ push ขึ้น branch main</p>
+      <p id="status">Ready to deploy</p>
+      <div class="actions">
+        <button id="helloBtn" type="button">Say Hello</button>
+        <a class="link" href="https://github.com/Etihw175/webdev-actions-lab">ดู source code</a>
+      </div>
+    </section>
+
+    <!-- Exercise 2: 3 ส่วน About Me / Skills / Contact -->
+    <section class="card" id="about">
+      <h2>About Me</h2>
+      <p>นิสิตปี 3 สาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยบูรพา สนใจงาน full-stack และระบบที่ deploy เองได้</p>
+      <p>โปรเจกต์ล่าสุดคือ ASTRA Motors เว็บจองทดลองขับและซื้อรถออนไลน์ เขียนด้วย FastAPI + PostgreSQL
+        และหน้าเว็บ HTML/CSS/JavaScript ล้วน</p>
+    </section>
+
+    <section class="card" id="skills">
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li><b>ภาษา</b><span>Python · JavaScript · SQL · HTML/CSS</span></li>
+        <li><b>ฝั่งเซิร์ฟเวอร์</b><span>FastAPI · SQLModel · PostgreSQL</span></li>
+        <li><b>เครื่องมือ</b><span>Git · GitHub Actions · Docker · pytest</span></li>
+      </ul>
+    </section>
+
+    <section class="card" id="contact">
+      <h2>Contact</h2>
+      <ul class="contact">
+        <li>อีเมล: <a href="mailto:67160175@go.buu.ac.th">67160175@go.buu.ac.th</a></li>
+        <li>GitHub: <a href="https://github.com/Etihw175">github.com/Etihw175</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>แลป GitHub Actions + GitHub Pages · อัปเดตล่าสุดโดย workflow <code>Deploy Static Website</code></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

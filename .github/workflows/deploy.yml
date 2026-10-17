@@ -1,0 +1,46 @@
+name: Deploy Static Website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      # Challenge: ตรวจไฟล์ที่ต้องมีก่อน deploy — ขาดไฟล์ใดไฟล์หนึ่งให้ job ล้มตรงนี้เลย
+      # ดีกว่าปล่อยขึ้นเว็บแล้วผู้ใช้เจอหน้า 404 หรือหน้าเว็บที่ CSS/JS หาย
+      - name: Check required files
+        run: |
+          test -f index.html
+          test -f style.css
+          test -f script.js
+          echo "พบไฟล์ครบทุกไฟล์ พร้อม deploy"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload static website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
